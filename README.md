@@ -90,13 +90,13 @@ Contributions are welcome! You can:
 * 💻 Submit pull requests with enhancements
 * 📢 Share the tool with others in the infosec and bug bounty community
 
-Please review `CONTRIBUTING.md` before submitting a pull request.
+Please review [CONTRIBUTING.md](https://github.com/iambuvanesh/spf_dmarc_checker/blob/main/CONTRIBUTING.md) before submitting a pull request.
 
 ---
 
 ## 📄 License
 
 Licensed under the **MIT License**.
-See `LICENSE` for more information.
+See [LICENSE](https://github.com/iambuvanesh/spf_dmarc_checker/blob/main/LICENSE) for more information.
 
 ---
