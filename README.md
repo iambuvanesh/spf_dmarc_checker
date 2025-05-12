@@ -1,4 +1,4 @@
-# 🔍 SPF & DMARC Checker - `spf_dmarc_check.sh`
+# 🔍 SPF & DMARC Checker - `spf_dmarc_checker.sh`
 
 A lightweight bash-based tool to check **SPF (Sender Policy Framework)** and **DMARC (Domain-based Message Authentication, Reporting & Conformance)** records for one or more domains.
 
@@ -13,7 +13,7 @@ Helps domain owners and security researchers verify the presence and syntax of S
 
 ---
 
-## 🛠️ How does `spf_dmarc_check.sh` work?
+## 🛠️ How does `spf_dmarc_checker.sh` work?
 
 - Accepts a text file containing a list of domains.
 - Uses the `dig` command to retrieve `TXT` records for SPF and DMARC.
@@ -37,9 +37,9 @@ Helps domain owners and security researchers verify the presence and syntax of S
 ## 📥 Installation
 
 ```bash
-git clone https://github.com/iambuvanesh/spf_dmarc_check
-cd spf_dmarc_check
-chmod +x spf_dmarc_check.sh
+git clone https://github.com/iambuvanesh/spf_dmarc_checker
+cd spf_dmarc_checker
+chmod +x spf_dmarc_checker.sh
 ````
 
 ---
@@ -47,7 +47,7 @@ chmod +x spf_dmarc_check.sh
 ## ⚙️ Usage
 
 ```bash
-./spf_dmarc_check.sh domain_list.txt
+./spf_dmarc_checker.sh domain_list.txt
 ```
 
 ### Example `domain_list.txt`:
@@ -85,7 +85,7 @@ sudo apt install dnsutils
 
 Contributions are welcome! You can:
 
-* 🐞 Report bugs or request features via [Issues](https://github.com/iambuvanesh/spf_dmarc_check/issues)
+* 🐞 Report bugs or request features via [Issues](https://github.com/iambuvanesh/spf_dmarc_checker/issues)
 * 📚 Improve the documentation
 * 💻 Submit pull requests with enhancements
 * 📢 Share the tool with others in the infosec and bug bounty community
@@ -100,12 +100,3 @@ Licensed under the **MIT License**.
 See `LICENSE` for more information.
 
 ---
-
-## 🙌 Acknowledgments
-
-Thanks to the open-source community and all contributors who help make tools like this available to everyone 💙
-
-```
-
----
-
