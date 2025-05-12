@@ -52,6 +52,10 @@ chmod +x spf_dmarc_checker.sh
 
 ```bash
 ./spf_dmarc_checker.sh domain_list.txt
+
+or
+
+bash spf_dmarc_checker.sh domain_list.txt
 ```
 
 ### Example `domain_list.txt`:
