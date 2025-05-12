@@ -46,7 +46,7 @@ chmod +x spf_dmarc_checker.sh
 
 ## 🔧 How to Use
 
-https://github.com/iambuvanesh/spf_dmarc_checker/blob/main/static/How%20to%20use.png
+![How to use](https://github.com/iambuvanesh/spf_dmarc_checker/blob/main/static/How%20to%20use.png?raw=true)
 
 ## ⚙️ Usage
 
