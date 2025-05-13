@@ -50,13 +50,17 @@ chmod +x spf_dmarc_checker.sh
 
 ## ⚙️ Usage
 
-```bash
-./spf_dmarc_checker.sh domain_list.txt
+* **Scan a single domain:**
 
-or
+  ```bash
+  ./spf_dmarc_checker.sh example.com
+  ```
 
-bash spf_dmarc_checker.sh domain_list.txt
-```
+* **Scan multiple domains from a file:**
+
+  ```bash
+  ./spf_dmarc_checker.sh domain_list.txt
+  ```
 
 ### Example `domain_list.txt`:
 
