@@ -1,25 +1,16 @@
 #!/bin/bash
 
-# Multi-domain SPF and DMARC Checker
+# Multi-domain or single-domain SPF and DMARC Checker
 
-if [ $# -lt 1 ]; then
-  echo "Usage: $0 domain_list.txt"
+print_usage() {
+  echo "Usage:"
+  echo "  $0 domain_list.txt         # Scan a list of domains"
+  echo "  $0 example.com             # Scan a single domain"
   exit 1
-fi
+}
 
-domain_list=$1
-
-if [ ! -f "$domain_list" ]; then
-  echo "File not found: $domain_list"
-  exit 1
-fi
-
-echo "Starting SPF and DMARC scan for domains in: $domain_list"
-echo "========================================================="
-
-while read -r domain; do
-  [ -z "$domain" ] && continue  # Skip empty lines
-
+scan_domain() {
+  local domain=$1
   echo ""
   echo "Domain: $domain"
   echo "-------------------------------------------"
@@ -29,7 +20,7 @@ while read -r domain; do
   if [ -n "$spf_record" ]; then
     echo "[+] SPF Record Found:"
     echo "    $spf_record"
-    
+
     if echo "$spf_record" | grep -qE '^"v=spf1'; then
       echo "[+] SPF syntax looks correct."
     else
@@ -49,7 +40,6 @@ while read -r domain; do
 
     if echo "$dmarc_record" | grep -qE '^"v=DMARC1'; then
       echo "[+] DMARC syntax looks correct."
-
       policy=$(echo "$dmarc_record" | grep -o "p=[a-z]*" | cut -d= -f2)
       echo "[+] DMARC Policy: $policy"
     else
@@ -60,8 +50,27 @@ while read -r domain; do
   fi
 
   echo "-------------------------------------------"
+}
 
-done < "$domain_list"
+# Entry Point
+if [ $# -ne 1 ]; then
+  print_usage
+fi
+
+input=$1
+
+if [[ -f "$input" ]]; then
+  echo "Starting SPF and DMARC scan for domains in: $input"
+  echo "========================================================="
+  while read -r domain; do
+    [ -z "$domain" ] && continue
+    scan_domain "$domain"
+  done < "$input"
+else
+  echo "Starting SPF and DMARC scan for single domain: $input"
+  echo "========================================================="
+  scan_domain "$input"
+fi
 
 echo ""
 echo "Scan completed."
